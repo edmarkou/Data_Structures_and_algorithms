@@ -1,0 +1,130 @@
+const DoublyLinkedList = require('./DoublyLinkedList');
+const LinkedList = require('./LinkedList');
+const Stack = require('./Stack');
+const Queue = require('./Queue');
+const Tree = require('./Tree');
+const HashTable = require('./HashTable');
+const Graph = require('./Graph');
+const { factorial } = require('./Factorial');
+const { bubbleSort, selectionSort, insertionSort, mergeSort } = require('./BasicSorts');
+const QuickSort = require('./QuickSort');
+
+const myLinkedList = new LinkedList(1);
+const myDoublyLinkedList = new DoublyLinkedList(1);
+const myStack = new Stack(1);
+const myQueue = new Queue(1);
+const myTree = new Tree();
+const myHashTable = new HashTable();
+const myGraph = new Graph();
+
+myLinkedList.push(2);
+myLinkedList.push(3);
+myLinkedList.pop();
+myLinkedList.pop();
+myLinkedList.pop();
+myLinkedList.unshift(3);
+myLinkedList.unshift(2);
+myLinkedList.unshift(1);
+myLinkedList.shift();
+myLinkedList.shift();
+myLinkedList.shift();
+myLinkedList.push(1);
+myLinkedList.push(2);
+myLinkedList.push(3);
+myLinkedList.push(4);
+console.log(myLinkedList.get(0).value);
+console.log(myLinkedList.get(1).value);
+console.log(myLinkedList.get(2).value);
+console.log(myLinkedList.get(3).value);
+myLinkedList.insert(2, 100);
+myLinkedList.remove(2);
+
+myDoublyLinkedList.push(2);
+myDoublyLinkedList.push(3);
+myDoublyLinkedList.pop();
+myDoublyLinkedList.pop();
+myDoublyLinkedList.pop();
+myDoublyLinkedList.unshift(3);
+myDoublyLinkedList.unshift(2);
+myDoublyLinkedList.unshift(1);
+myDoublyLinkedList.shift();
+myDoublyLinkedList.shift();
+myDoublyLinkedList.shift();
+myDoublyLinkedList.push(1);
+myDoublyLinkedList.push(2);
+myDoublyLinkedList.push(3);
+myDoublyLinkedList.push(4);
+console.log(myDoublyLinkedList.get(0).value);
+console.log(myDoublyLinkedList.get(1).value);
+console.log(myDoublyLinkedList.get(2).value);
+console.log(myDoublyLinkedList.get(3).value);
+myDoublyLinkedList.insert(2, 100);
+myDoublyLinkedList.remove(2);
+
+myStack.push(2);
+myStack.push(3);
+myStack.pop();
+myStack.pop();
+
+myQueue.enqueue(2);
+myQueue.enqueue(3);
+myQueue.enqueue(4);
+myQueue.dequeue();
+myQueue.dequeue();
+
+myTree.insert(4);
+myTree.insert(3);
+myTree.insert(5);
+myTree.insert(20);
+myTree.insert(10);
+myTree.insert(45);
+myTree.insert(32);
+myTree.insert(1);
+console.log(myTree.contains(23));
+console.log(myTree.contains(4));
+console.log(myTree.contains(3));
+
+console.log(myTree.minValueNode(15));
+console.log(myTree.minValueNode(35));
+console.log(myTree.minValueNode(2));
+console.log(myTree.BFS());
+console.log(myTree.DFS_preorder());
+console.log(myTree.DFS_postorder());
+console.log(myTree.DFS_inorder());
+
+
+myHashTable.set("handleBar", 100);
+myHashTable.set("frame", 300);
+myHashTable.set("cranks", 120);
+myHashTable.set("cranks", 129);
+myHashTable.set("seat", 60);
+console.log(myHashTable.get("frame"));
+console.log(myHashTable.get("handleBar"));
+console.log(myHashTable.get("test"));
+console.log(myHashTable.get("crlnks"));
+console.log(myHashTable.get("cranks"));
+console.log(myHashTable.keys());
+
+myGraph.add("A");
+myGraph.add("B");
+myGraph.add("A");
+myGraph.add("C");
+myGraph.add("D");
+myGraph.addEdge("A", "B");
+myGraph.addEdge("A", "C");
+myGraph.addEdge("A", "G");
+myGraph.addEdge("C", "D");
+myGraph.removeEdge("A", "B");
+myGraph.removeEdge("A", "G");
+myGraph.removeVertex("C");
+myGraph.removeVertex("G");
+
+console.log(factorial(4));
+console.log(factorial(2));
+console.log(factorial(6));
+
+console.log(bubbleSort([6, 4, 1, 5, 7, 6, 8, 3, 15, 2]));
+console.log(selectionSort([6, 4, 1, 5, 7, 6, 8, 3, 15, 2]));
+console.log(insertionSort([6, 4, 1, 5, 7, 6, 8, 3, 15, 2]));
+console.log(mergeSort([6, 4, 1, 5, 7, 6, 8, 3, 15, 2]));
+console.log(QuickSort([6, 4, 1, 5, 7, 6, 8, 3, 15, 2]));
